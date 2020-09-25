@@ -56,3 +56,5 @@ class Reticulado(object):
 		"""Implementar"""
 		return
 
+	def __str__(self):
+		return "Hola, soy un reticulado vacio!"
