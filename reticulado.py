@@ -13,7 +13,10 @@ class Reticulado(object):
 		self.restricciones = {}
 
 	def agregar_nodo(self, x, y, z=0):
-		"""Implementar"""
+		
+        self.xyz.resize((self.Nnodos+1,3))
+        self.xyz[self.Nnodos,:] = [x,y,z]
+        self.Nnodos +=1
 		return
 		
 	def agregar_barra(self, barra):
@@ -55,6 +58,7 @@ class Reticulado(object):
 	def recuperar_fuerzas(self):
 		"""Implementar"""
 		return
-
-	def __str__(self):
+    
+    def __str__(self):
 		return "Hola, soy un reticulado vacio!"
+
