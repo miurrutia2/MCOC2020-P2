@@ -17,7 +17,7 @@ class Reticulado(object):
 	def agregar_nodo(self, x, y, z=0):
 		if self.Nnodos+1 > Reticulado.__NNodosInit__:
 			self.xyz.resize((self.Nnodos+1, 3))
-		self.xyz[self.Nnodos, :] = [x, x, z]
+		self.xyz[self.Nnodos, :] = [x, y, z]
 		self.Nnodos += 1
 
 	def agregar_barra(self, barra):
