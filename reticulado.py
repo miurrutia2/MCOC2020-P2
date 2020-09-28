@@ -62,7 +62,7 @@ class Reticulado(object):
 
 	def __str__(self):
 		s = "Hola soy un reticulado!\n"
-		s += "mis nodos son:"
+		s += "mis nodos son"
 		s += f"{self.xyz}"
 		return s
 
