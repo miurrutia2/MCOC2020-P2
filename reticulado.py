@@ -19,7 +19,7 @@ class Reticulado(object):
 			self.xyz.resize((self.Nnodos+1, 3))
 		self.xyz[self.Nnodos, :] = [x, x, z]
 		self.Nnodos += 1
-		
+
 	def agregar_barra(self, barra):
 		self.barras.append(barra)
 
@@ -81,5 +81,3 @@ class Reticulado(object):
 			s += f"{nodo} : {self.cargas[ndo]}\n"
 
 		return s
-
-
