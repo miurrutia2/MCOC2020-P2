@@ -41,16 +41,12 @@ class Reticulado(object):
 		return self.barras
 
 	def agregar_restriccion(self, nodo, gdl, valor=0.0):
-		if nodo not in self.restricciones:
-			slef.restricciones[nodo] = [[gdl, valor]]
-		else:
-			self.restricciones[nodo].append([gdl, valor])
+		"""Implementar"""
+		return
 
 	def agregar_fuerza(self, nodo, gdl, valor):
-		if nodo not in self.cargas:
-			slef.cargas[nodo] = [[gdl, valor]]
-		else:
-			self.cargas[nodo].append([gdl, valor])
+		"""Implementar"""
+		return
 
 	def ensamblar_sistema(self):
 		"""Implementar"""
@@ -63,21 +59,10 @@ class Reticulado(object):
 	def recuperar_fuerzas(self):
 		"""Implementar"""
 		return
-    
-	def __str__(self):
-		s = "nodos:\n"
-		for n in range(self.Nnodos):
-			s += f" {n} : ( {self.xyz[n, 0]}, {self.xyz[n, 1]}, {self.xyz[n, 2]}"
-		s += "\n\n"
-		s += "barras:\n"
-		for i, b in enumerate(self.barras):
-			n = b.obtener_conectividad()
-			s += f" {i} : [ {n[0]} {n[1]} ] \n"
-		s += "restricciones:\n"
-		for nodo in self.restricciones:
-			s += f"{nodo} : {self.restricciones[nodo]}\n"
-		s += "cargas:\n"
-		for nodo in self.cargas:
-			s += f"{nodo} : {self.cargas[ndo]}\n"
 
+	def __str__(self):
+		s = "Hola soy un reticulado!\n"
+		s += "mis nodos son"
+		s += f"{self.xyz}"
 		return s
+
