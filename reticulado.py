@@ -61,8 +61,17 @@ class Reticulado(object):
 		return
 
 	def __str__(self):
-		s = "Hola soy un reticulado!\n"
-		s += "mis nodos son"
-		s += f"{self.xyz}"
-		return s
+		#datos nodos
+		s = "nodos:\n"
+		for i in range(self.Nnodos):
+			s += f" {i} : ({self.xyz[i,0]}, {self.xyz[i,1]}, {self.xyz[i,2]})\n "
+		s += "\n" * 2
+		#datos barras
+		s += "barras:\n"
 
+		for i in range(len(self.barras)):
+			
+			s += f"{i} : [ {self.barras[i].ni} {self.barras[i].nj} ]\n "
+		s += "\n"
+		s += f"peso_total = {self.calcular_peso_total()}"
+		return s
