@@ -98,7 +98,7 @@ class Reticulado(object):
                     self.K[p,q] += ke[i,j]
                     fe = b.obtener_vector_de_cargas(self)
                     
-                self.f[p]+=fe[i]
+                self.f[p] += fe[i]
         
         for carga in self.cargas:
             x_y = self.cargas[carga][0][0]
