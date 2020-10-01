@@ -56,7 +56,7 @@ class Barra(object):
 		#implementar
 		L = self.calcular_largo(ret)
 		A = self.calcular_area()
-		k = self.E * A /L
+		k = (self.E * A)/L
 		
 		nix = ret.xyz[self.ni, 0]
 		niy = ret.xyz[self.ni, 1]
@@ -67,8 +67,8 @@ class Barra(object):
 		cos = (njx - nix) / L
 		sen = (njy - niy) / L
 
-		Ttheta = np.array([-cos, -sen, cos, sen])
-		ke = k * Ttheta.T @ Ttheta 
+		Ttheta = np.array([[-cos], [-sen], [cos], [sen]])
+		ke = k * Ttheta @ Ttheta.T 
 
 		return ke
 
@@ -111,6 +111,7 @@ class Barra(object):
 
 
 		return se
+
 
 
 
