@@ -120,11 +120,34 @@ class Reticulado(object):
         gdl_libres = np.arange(Ngdl)
         gdl_restringidos = []
 
+
+
+
         #Identificar gdl_restringidos y llenar u 
+
+        #numero de nodos restringidos*2 + gdl
+        for nodo in self.restricciones:
+
+            if self.restricciones[nodo][0][0] == 0:
+                gdl_restringidos.append(nodo * 2)
+
+            elif self.restricciones[nodo][0][0] == 1:
+                gdl_restringidos.append(nodo * 2 + 1)
+
+            if len(self.restricciones[nodo]) > 1:
+
+                if self.restricciones[nodo][1][0] == 0:
+                    gdl_restringidos.append(nodo * 2)
+
+                elif self.restricciones[nodo][1][0] == 1:
+                    gdl_restringidos.append(nodo * 2 + 1)
         # en valores conocidos.
         #
         # Hint: la funcion numpy.setdiff1d es util
+        gdl_libres=np.setdiff1d(gdl_libres,gdl_restringidos)
 
+
+       
 
         #Agregar cargas nodales a vector de cargas 
         for nodo in self.cargas:
@@ -139,12 +162,24 @@ class Reticulado(object):
         #       K en Kff, Kfc, Kcf y Kcc.
         #       f en ff y fc
         #       u en uf y uc
+        Kff = self.K[np.ix_(gdl_libres,gdl_libres)]
+        Kfc = self.K[np.ix_(gdl_libres,gdl_restringidos)]
+        Kcf = Kfc.T
+        Kcc = self.K[np.ix_(gdl_restringidos,gdl_restringidos)]
         
+        uf = self.u[gdl_libres]
+        uc = self.u[gdl_restringidos]
+
+        ff = self.f[gdl_libres]
+        fc = self.f[gdl_restringidos]
+
+        uf = solve(Kff, ff- Kfc @ uc)
 
         # Resolver para obtener uf -->  Kff uf = ff - Kfc*uc
-        
+        self.Rc = Kcf@uf + Kcc@uc - fc  
+
         #Asignar uf al vector solucion
-        #self.u[gdl_libres] = uf
+        self.u[gdl_libres] = uf
 
         #Marcar internamente que se tiene solucion
         self.tiene_solucion = True
