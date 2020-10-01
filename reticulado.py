@@ -144,7 +144,7 @@ class Reticulado(object):
         # Resolver para obtener uf -->  Kff uf = ff - Kfc*uc
         
         #Asignar uf al vector solucion
-        self.u[gdl_libres] = uf
+        #self.u[gdl_libres] = uf
 
         #Marcar internamente que se tiene solucion
         self.tiene_solucion = True
