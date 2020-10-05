@@ -178,7 +178,7 @@ class Reticulado(object):
 
 	def rediseñar(self, Fu, ϕ=0.9):
 		for i,b in enumerate(self.barras):
-			b.rediseñar(Fu[i], ϕ)
+			b.rediseñar(Fu[i], self, ϕ)
 
 
 

@@ -95,12 +95,29 @@ class Barra(object):
 
 
 	def chequear_diseño(self, Fu, ϕ=0.9):
+		"""Para la fuerza Fu (proveniente de una combinacion de cargas)
+		revisar si esta barra cumple las disposiciones de diseño.
+		"""
+		return False
 
 
 	def obtener_factor_utilizacion(self, Fu, ϕ=0.9):
+		"""Para la fuerza Fu (proveniente de una combinacion de cargas)
+		calcular y devolver el factor de utilización
+		"""
+		FU = 0. 
+
+		return FU
 
 
-
-	def rediseñar(self, Fu, ϕ=0.9):
+	def rediseñar(self, Fu, ret, ϕ=0.9):
+		"""Para la fuerza Fu (proveniente de una combinacion de cargas)
+		re-calcular el radio y el espesor de la barra de modo que
+		se cumplan las disposiciones de diseño lo más cerca posible
+		a FU = 1.0.
+		"""
+		self.R = 0.9*self.R   #cambiar y poner logica de diseño
+		self.t = 0.9*self.t   #cambiar y poner logica de diseño
+		return None
 
 
