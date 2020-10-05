@@ -92,3 +92,15 @@ class Barra(object):
 
 
 
+
+
+	def chequear_diseño(self, Fu, ϕ=0.9):
+
+
+	def obtener_factor_utilizacion(self, Fu, ϕ=0.9):
+
+
+
+	def rediseñar(self, Fu, ϕ=0.9):
+
+

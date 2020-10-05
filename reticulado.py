@@ -60,6 +60,10 @@ class Reticulado(object):
 
 
 	def agregar_fuerza(self, nodo, gdl, valor):
+		"""
+		Agrega una fuerza al sistema en el 'nodo', 
+		y 'gdl' especificados con el 'valor' dado. 
+		"""
 		if nodo not in self.cargas:
 			self.cargas[nodo] = [[gdl, valor]]
 		else:
@@ -155,7 +159,6 @@ class Reticulado(object):
 		return self.u[dofs]
 
 
-
 	def recuperar_fuerzas(self):
 		
 		fuerzas = np.zeros((len(self.barras)), dtype=np.double)
@@ -165,6 +168,17 @@ class Reticulado(object):
 		return fuerzas
 
 
+	def recuperar_factores_de_utilizacion(self, f):
+		
+		FU = np.zeros((len(self.barras)), dtype=np.double)
+		for i,b in enumerate(self.barras):
+			FU[i] = b.obtener_factor_utilizacion(f[i])
+
+		return FU
+
+	def rediseñar(self, Fu, ϕ=0.9):
+		for i,b in enumerate(self.barras):
+			b.rediseñar(Fu[i], ϕ)
 
 
 
@@ -214,5 +228,6 @@ class Reticulado(object):
 			for b in range(len(self.barras)):
 				s += f"  {b} : {f[b]}\n"
 		s += "\n"
+		s += f"Ndimensiones = {self.Ndimensiones}"
 
 		return s
