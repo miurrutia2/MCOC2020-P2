@@ -5,6 +5,10 @@ from graficar3d import ver_reticulado_3d
 ret_D = caso_D()
 ret_L = caso_L()
 
+peso = ret_D.calcular_peso_total()
+
+print(f"peso = {peso}")
+
 ver_reticulado_3d(ret_D, 
 	axis_Equal=True, 
 	opciones_barras={
@@ -118,3 +122,8 @@ ver_reticulado_3d(ret_D,
 
 plt.title("FU caso 2: 1.2 D + 1.6 L")
 plt.show()
+
+
+Fu = #definir
+
+ret_D.rediseñar(Fu)
