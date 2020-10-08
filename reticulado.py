@@ -181,6 +181,10 @@ class Reticulado(object):
 			b.rediseñar(Fu[i], self, ϕ)
 
 
+	def chequear_diseño(self, Fu, ϕ=0.9):
+		for i,b in enumerate(self.barras):
+			b.chequear_diseño(Fu[i], self, ϕ)
+
 
 
 
