@@ -183,7 +183,9 @@ class Reticulado(object):
 
 	def chequear_diseño(self, Fu, ϕ=0.9):
 		for i,b in enumerate(self.barras):
-			b.chequear_diseño(Fu[i], self, ϕ)
+			if not b.chequear_diseño(Fu[i], self, ϕ):
+				return False
+		return True
 
 
 
