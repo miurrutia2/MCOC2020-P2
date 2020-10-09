@@ -12,7 +12,7 @@ print(f"peso = {peso}")
 ver_reticulado_3d(ret_D, 
 	axis_Equal=True, 
 	opciones_barras={
-	"ver_numeros_de_barras": True
+	"ver_numeros_de_barras": False
 	}, 
     llamar_show=True,
     zoom=180.,
