@@ -5,10 +5,14 @@ from graficar3d import ver_reticulado_3d
 ret_D = caso_D()
 ret_L = caso_L()
 
+peso = ret_D.calcular_peso_total()
+
+print(f"peso = {peso}")
+
 ver_reticulado_3d(ret_D, 
 	axis_Equal=True, 
 	opciones_barras={
-	"ver_numeros_de_barras": False
+	"ver_numeros_de_barras": True
 	}, 
     llamar_show=True,
     zoom=180.,
@@ -73,7 +77,7 @@ ver_reticulado_3d(ret_D,
     zoom=180.,
     deshabilitar_ejes=True)
 
-plt.title("Tensiones en caso 1: 1.2 D + 1.6 L")
+plt.title("Tensiones en caso 2: 1.2 D + 1.6 L")
 plt.show()
 
 
@@ -99,7 +103,6 @@ plt.title("FU caso 1: 1.4 D ")
 plt.show()
 
 
-
 ver_reticulado_3d(ret_D, 
     opciones_nodos = {
         "usar_posicion_deformada": True,
@@ -118,3 +121,7 @@ ver_reticulado_3d(ret_D,
 
 plt.title("FU caso 2: 1.2 D + 1.6 L")
 plt.show()
+
+
+#Fu = definir
+#ret_D.rediseñar(Fu)
