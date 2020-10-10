@@ -86,9 +86,9 @@ class Reticulado(object):
         self.u = np.zeros((Ngdl), dtype=np.double)
 
         for b in self.barras:
-            nodo1 = b.ni
-            nodo2 = b.nj
-            d=[2*nodo1, 2*nodo1 + 1, 2*nodo2, 2*nodo2 + 1]
+            n_i = b.ni
+            n_j = b.nj
+            d=[2*n_i, 2*n_i + 1, 2*n_j, 2*n_j + 1]
             
             for i in range (len(d)):
                 p = d[i]
@@ -98,15 +98,13 @@ class Reticulado(object):
                     self.K[p,q] += ke[i,j]
                     fe = b.obtener_vector_de_cargas(self)
                     
-                self.f[p]+=fe[i]
+                self.f[p] += fe[i]
         
         for carga in self.cargas:
             x_y = self.cargas[carga][0][0]
             fuerza = self.cargas[carga][0][1]
             nodo_c = carga*2 + x_y
             self.f[nodo_c] += fuerza
-        
-        return self.K,self.f
 
 
 
