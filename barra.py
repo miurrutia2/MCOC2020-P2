@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 g = 9.81 #kg*m/s^2
 
@@ -128,7 +129,7 @@ class Barra(object):
 
 		FdU = self.obtener_factor_utilizacion(Fu, ϕ)
 		Asolicitada = abs(Fu) / (self.σy * ϕ)
-		Adiseno = self.calcular_area()
+		Adiseño = self.calcular_area()
 		Re = self.R
 		Ri = Re - self.t
 
@@ -138,33 +139,35 @@ class Barra(object):
 		def Funt(R, A):
 			return int(R - np.sqrt((np.pi * R**2 - A) / np.pi))
 
-		if Adiseno < Asolicitada:
+
+		if math.isclose(abs(FdU), 1., abs_tol = 0.15):
+			self.R = Re
+			self.t = Funt(self.R, Adiseño)
+			return 
+
+		if FdU < 1:
 			self.R = Re + 1
 
 			if self.chequear_diseño:
-				self.t = Funt(self.R, self.calcular_area())
+				self.t = Funt(self.R, Adiseño)
+				return
 
 			if not self.chequear_diseño:
 				self.rediseñar(self, Fu, ϕ, ret)
 
-		if Adiseno == Asolicitada:
-			return None
-
-		if Adiseno > Asolicitada:
+		
+		if FdU > 1:
 			self.R = Re -1
 
 			if self.chequear_diseño:
-				self.t = Funt(self.R, self.calcular_area())
+				self.t = Funt(self.R, Adiseño)
+				return
+
 
 			if not self.chequear_diseño:
 				self.rediseñar(self, Fu, ϕ, ret)
 
 
-
-
-
-		#self.R = 0.9*self.R   #cambiar y poner logica de diseño
-		#self.t = 0.9*self.t   #cambiar y poner logica de diseño
 		return None
 
 
