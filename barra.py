@@ -145,7 +145,7 @@ class Barra(object):
 			self.t = Funt(self.R, Adiseño)
 			return 
 
-		if FdU < 1:
+		if abs(FdU) < 1:
 			self.R = Re + 1
 
 			if self.chequear_diseño:
@@ -156,7 +156,7 @@ class Barra(object):
 				self.rediseñar(self, Fu, ϕ, ret)
 
 		
-		if FdU > 1:
+		if abs(FdU) > 1:
 			self.R = Re -1
 
 			if self.chequear_diseño:
