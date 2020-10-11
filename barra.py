@@ -44,15 +44,6 @@ class Barra(object):
 		return self.ρ * A * L * g
 
 
-
-
-
-
-
-
-
-
-
 	def obtener_rigidez(self, ret):
 		A = self.calcular_area()
 		L = self.calcular_largo(ret)
@@ -67,6 +58,7 @@ class Barra(object):
 		Tθ = np.array([ -cosθx, -cosθy, -cosθz, cosθx, cosθy, cosθz ]).reshape((6,1))
 
 		return self.E * A / L * (Tθ @ Tθ.T )
+
 
 	def obtener_vector_de_cargas(self, ret):
 		W = self.calcular_peso(ret)
