@@ -44,6 +44,7 @@ class Barra(object):
 		return self.ρ * A * L * g
 
 
+
 	def obtener_rigidez(self, ret):
 		A = self.calcular_area()
 		L = self.calcular_largo(ret)
@@ -161,5 +162,6 @@ class Barra(object):
 
 
 		return None
+
 
 
