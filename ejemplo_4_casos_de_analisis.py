@@ -166,6 +166,7 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 plt.title("Tensiones en caso D rediseñado: 1.4 D ")
+plt.savefig("Tension.png")
 plt.show()
 
 
@@ -188,5 +189,6 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 plt.title("FU caso D rediseñado: 1.4 D ")
+plt.savefig("Fu.png")
 plt.show()
 
