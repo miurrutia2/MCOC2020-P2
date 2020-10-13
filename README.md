@@ -5,6 +5,7 @@ MCOC2020-P2
 ![](2.png)
 ![](3.png)
 ![](4.png)
+
 Se eligieron las siguientes barras:
 
 Barra 0 (0,1) 
