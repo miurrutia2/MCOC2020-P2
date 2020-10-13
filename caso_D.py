@@ -68,7 +68,7 @@ def caso_D():
     ret.agregar_barra(Barra(3,  6, *props))   # 19
     ret.agregar_barra(Barra(10, 6, *props))   # 20
     ret.agregar_barra(Barra(9,  6, *props))   # 21
-    ret.agregar_barra(Barra(0,  8, *props))   # 2
+    ret.agregar_barra(Barra(0,  8, *props))   # 22
     ret.agregar_barra(Barra(1,  7, *props))   # 23
     ret.agregar_barra(Barra(1,  9, *props))   # 24
     ret.agregar_barra(Barra(2,  8, *props))   # 25
