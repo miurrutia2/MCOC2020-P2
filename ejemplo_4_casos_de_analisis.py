@@ -19,8 +19,8 @@ ver_reticulado_3d(ret_D,
     llamar_show=True,
     zoom=180.,
     deshabilitar_ejes=True)
-
 plt.savefig("0.png")
+
 
 ret_D.ensamblar_sistema()
 ret_D.resolver_sistema()
@@ -193,7 +193,7 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 plt.title("FU caso D rediseñado: 1.2 D + 1.6L")
-plt.savefig("Fu2.png")
+plt.savefig("Fu1.png")
 plt.show()
 ver_reticulado_3d(ret_D, 
     opciones_nodos = {
