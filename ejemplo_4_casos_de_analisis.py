@@ -19,7 +19,6 @@ ver_reticulado_3d(ret_D,
     llamar_show=True,
     zoom=180.,
     deshabilitar_ejes=True)
-plt.savefig("0.png")
 
 
 ret_D.ensamblar_sistema()
