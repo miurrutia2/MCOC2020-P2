@@ -1,6 +1,10 @@
 # MCOC2020-P2
 MCOC2020-P2
-
+![](0.png)
+![](1.png)
+![](2.png)
+![](3.png)
+![](4.png)
 Se eligieron las siguientes barras:
 
 Barra 0 (0,1) 
@@ -34,3 +38,7 @@ Barra 26: 0.4738414669319976
 
 Y obteniendo un peso total de 20666.548941771813 Kg.
 
+![](Tension1.png)
+![](Fu1.png)
+![](Tension2.png)
+![](Fu2.png)
