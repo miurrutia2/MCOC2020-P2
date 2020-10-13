@@ -2,6 +2,8 @@ from caso_D import caso_D
 from caso_L import caso_L
 from graficar3d import ver_reticulado_3d
 
+import matplotlib.pyplot as plt
+
 ret_D = caso_D()
 ret_L = caso_L()
 
@@ -18,7 +20,7 @@ ver_reticulado_3d(ret_D,
     zoom=180.,
     deshabilitar_ejes=True)
 
-
+plt.savefig("0.png")
 
 ret_D.ensamblar_sistema()
 ret_D.resolver_sistema()
@@ -40,7 +42,6 @@ FU_caso1 = ret_D.recuperar_factores_de_utilizacion(f_1)
 FU_caso2 = ret_D.recuperar_factores_de_utilizacion(f_2)
 
 
-import matplotlib.pyplot as plt
 
 ver_reticulado_3d(ret_D, 
     opciones_nodos = {
@@ -59,6 +60,7 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 plt.title("Tensiones en caso 1: 1.4 D ")
+plt.savefig("1.png")
 plt.show()
 
 
@@ -81,7 +83,7 @@ ver_reticulado_3d(ret_D,
 
 
 plt.title("Tensiones en caso 1: 1.2 D + 1.6 L")
-
+plt.savefig("2.png")
 plt.show()
 
 
@@ -104,6 +106,7 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 plt.title("FU caso 1: 1.4 D ")
+plt.savefig("3.png")
 plt.show()
 
 
@@ -125,6 +128,7 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 plt.title("FU caso 2: 1.2 D + 1.6 L")
+plt.savefig("4.png")
 plt.show()
 
 #Fu = #definir
@@ -165,8 +169,8 @@ ver_reticulado_3d(ret_D,
     zoom=180.,
     deshabilitar_ejes=True)
 
-plt.title("Tensiones en caso D rediseñado: 1.4 D ")
-plt.savefig("Tension.png")
+plt.title("Tensiones en caso D rediseñado: 1.2 D + 1.6 L")
+plt.savefig("Tension1.png")
 plt.show()
 
 
@@ -188,7 +192,49 @@ ver_reticulado_3d(ret_D,
     zoom=180.,
     deshabilitar_ejes=True)
 
-plt.title("FU caso D rediseñado: 1.4 D ")
-plt.savefig("Fu.png")
+plt.title("FU caso D rediseñado: 1.2 D + 1.6L")
+plt.savefig("Fu2.png")
+plt.show()
+ver_reticulado_3d(ret_D, 
+    opciones_nodos = {
+        "usar_posicion_deformada": True,
+        "factor_amplificacion_deformada": 60.,
+        "datos_desplazamientos_nodales": 1.4*ret_D.u,
+    },
+    opciones_barras = {
+        "color_barras_por_dato": True,
+        "ver_numeros_de_barras": False,
+        "ver_dato_en_barras": True,
+        "dato": f_D*1.4,
+        "color_fondo": [1,1,1,0.4]
+    }, 
+    llamar_show=False,
+    zoom=180.,
+    deshabilitar_ejes=True)
+
+plt.title("Tensiones en caso D rediseñado: 1.4 D ")
+plt.savefig("Tension2.png")
 plt.show()
 
+
+
+ver_reticulado_3d(ret_D, 
+    opciones_nodos = {
+        "usar_posicion_deformada": True,
+        "factor_amplificacion_deformada": 60.,
+        "datos_desplazamientos_nodales": 1.4*ret_D.u,
+    },
+    opciones_barras = {
+        "color_barras_por_dato": True,
+        "ver_numeros_de_barras": False,
+        "ver_dato_en_barras": True,
+        "dato": FU_caso2_rediseñado,
+        "color_fondo": [1,1,1,0.4]
+    }, 
+    llamar_show=False,
+    zoom=180.,
+    deshabilitar_ejes=True)
+
+plt.title("FU caso D rediseñado: 1.4 D ")
+plt.savefig("Fu2.png")
+plt.show()

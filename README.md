@@ -33,3 +33,4 @@ Barra 23: 0.4738414669319976
 Barra 26: 0.4738414669319976
 
 Y obteniendo un peso total de 20666.548941771813 Kg.
+
