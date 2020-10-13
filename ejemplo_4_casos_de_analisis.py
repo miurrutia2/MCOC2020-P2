@@ -19,7 +19,11 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 
+<<<<<<< HEAD
+#Carga Muerta
+=======
 #Peso propio
+>>>>>>> master
 ret_D.ensamblar_sistema()
 ret_D.resolver_sistema()
 f_D = ret_D.recuperar_fuerzas()
@@ -29,11 +33,19 @@ ret_L.ensamblar_sistema()
 ret_L.resolver_sistema()
 f_L = ret_L.recuperar_fuerzas()
 
+<<<<<<< HEAD
+#Combinaciones de arga
+f_1 = 1.4*f_D           #Combinacion 1
+f_2 = 1.2*f_D + 1.6*f_L #Combinacion 2
+
+#Calcular factores 
+=======
 #Combinaciones de carga
 f_1 = 1.4*f_D           #Combinacion 1
 f_2 = 1.2*f_D + 1.6*f_L #Combinacion 2
 
 # Calcular factores 
+>>>>>>> master
 FU_caso1 = ret_D.recuperar_factores_de_utilizacion(f_1)
 FU_caso2 = ret_D.recuperar_factores_de_utilizacion(f_2)
 
@@ -77,7 +89,11 @@ ver_reticulado_3d(ret_D,
     zoom=180.,
     deshabilitar_ejes=True)
 
+<<<<<<< HEAD
+plt.title("Tensiones en caso 2: 1.2 D + 1.6 L")
+=======
 plt.title("Tensiones en caso 1: 1.2 D + 1.6 L")
+>>>>>>> master
 plt.show()
 
 
@@ -103,7 +119,10 @@ plt.title("FU caso 1: 1.4 D ")
 plt.show()
 
 
+<<<<<<< HEAD
+=======
 
+>>>>>>> master
 ver_reticulado_3d(ret_D, 
     opciones_nodos = {
         "usar_posicion_deformada": True,
@@ -124,6 +143,11 @@ plt.title("FU caso 2: 1.2 D + 1.6 L")
 plt.show()
 
 
+<<<<<<< HEAD
+#Fu = definir
+#ret_D.rediseñar(Fu)
+=======
 #Fu = #definir
 
 ret_D.rediseñar(Fu)
+>>>>>>> master

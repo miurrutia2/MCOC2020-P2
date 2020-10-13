@@ -1,5 +1,7 @@
 import numpy as np
+
 import math
+
 
 g = 9.81 #kg*m/s^2
 
@@ -42,6 +44,7 @@ class Barra(object):
 		L = self.calcular_largo(reticulado)
 		A = self.calcular_area()
 		return self.ρ * A * L * g
+
 
 
 
@@ -120,6 +123,7 @@ class Barra(object):
 		a FU = 1.0.
 		"""
 
+
 		FdU = self.obtener_factor_utilizacion(Fu, ϕ)
 		Asolicitada = abs(Fu) / (self.σy * ϕ)
 		Adiseño = self.calcular_area()
@@ -162,6 +166,7 @@ class Barra(object):
 
 
 		return None
+
 
 
 
