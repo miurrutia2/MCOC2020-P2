@@ -168,15 +168,15 @@ class Reticulado(object):
 
 		return self.u[dofs]
 
-    def recuperar_factores_de_utilizacion(self, f):
-        FU = np.zeros((len(self.barras)), dtype = np.double)
-        for i,b in enumerate(self.barras):
-            FU[i] = b.obtener_factor_utilizacion(f[i])
+	def recuperar_factores_de_utilizacion(self, f):
+		FU = np.zeros((len(self.barras)), dtype = np.double)
+		for i,b in enumerate(self.barras):
+			FU[i] = b.obtener_factor_utilizacion(f[i])
 
 
-    def rediseñar(self, Fu, ϕ=0.9):
-        for i,b in enumerate(self.barras):
-            b.rediseñar(FU[i], self, ϕ)
+	def rediseñar(self, Fu, ϕ=0.9):
+	    for i,b in enumerate(self.barras):
+	        b.rediseñar(FU[i], self, ϕ)
 
 	def recuperar_fuerzas(self):
 		

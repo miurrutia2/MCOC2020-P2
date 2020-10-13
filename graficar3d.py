@@ -107,11 +107,6 @@ def graficar_barras(ret, fig, opciones):
         c_max = opciones["color_barra_max"]
         c_cero = opciones["color_barra_cero"]
 
-<<<<<<< HEAD
-        
-
-=======
->>>>>>> master
     c = opciones["color_barras"]
     fmt = opciones["formato_dato_en_barras"]
     txt_case = int(opciones["ver_numeros_de_barras"]) + 2*int(opciones["ver_dato_en_barras"])
