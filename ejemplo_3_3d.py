@@ -98,12 +98,21 @@ print(f"peso = {peso}")
 
 
 
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> master
 ret.ensamblar_sistema()
 ret.resolver_sistema()
 f = ret.recuperar_fuerzas()
 fu = ret.recuperar_factores_de_utilizacion(f)
 
+<<<<<<< HEAD
 print (ret)
+=======
+>>>>>>> master
 
 ver_reticulado_3d(ret, 
     opciones_nodos = {
@@ -121,7 +130,11 @@ ver_reticulado_3d(ret,
 barras_a_rediseñar = [3,4,5, 9, 10, 11]
 barras = ret.obtener_barras()
 for i in barras_a_rediseñar:
+<<<<<<< HEAD
     barras[i].rediseñar(f[i])
+=======
+	barras[i].rediseñar(f[i])
+>>>>>>> master
 
 
 
@@ -135,8 +148,11 @@ peso = ret.calcular_peso_total()
 
 print(f"peso = {peso}")
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> master
 ver_reticulado_3d(ret, 
     opciones_nodos = {
         "usar_posicion_deformada": True,
@@ -148,4 +164,8 @@ ver_reticulado_3d(ret,
         "ver_dato_en_barras": True,
         "dato": fu1,
         "color_fondo": [1,1,1,0.4]
+<<<<<<< HEAD
     })
+=======
+    })
+>>>>>>> master
