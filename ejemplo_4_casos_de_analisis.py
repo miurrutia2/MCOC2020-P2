@@ -19,7 +19,7 @@ ver_reticulado_3d(ret_D,
     deshabilitar_ejes=True)
 
 
-#Peso propio
+#Carga Muerta
 ret_D.ensamblar_sistema()
 ret_D.resolver_sistema()
 f_D = ret_D.recuperar_fuerzas()
@@ -29,11 +29,11 @@ ret_L.ensamblar_sistema()
 ret_L.resolver_sistema()
 f_L = ret_L.recuperar_fuerzas()
 
-#Combinaciones de carga
+#Combinaciones de arga
 f_1 = 1.4*f_D           #Combinacion 1
 f_2 = 1.2*f_D + 1.6*f_L #Combinacion 2
 
-# Calcular factores 
+#Calcular factores 
 FU_caso1 = ret_D.recuperar_factores_de_utilizacion(f_1)
 FU_caso2 = ret_D.recuperar_factores_de_utilizacion(f_2)
 
