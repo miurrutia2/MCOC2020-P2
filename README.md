@@ -43,3 +43,7 @@ Y obteniendo un peso total de 20666.548941771813 Kg.
 ![](Fu1.png)
 ![](Tension2.png)
 ![](Fu2.png)
+
+El desplazamiento maximo es 0.00725609613507172 m
+
+Para disminuir el peso aun más, se podrían quitar las barras cuyas tensiones sean igual a 0, ya que estas no estan aportando en la estabilidad estructural del enrejado, sino que solo estan aportando en peso. Por ejemplo las barras 3(3,10) y 7(0,7), las cuales siempre tienen tensión 0, sea cual sea el área transversal de las barras.

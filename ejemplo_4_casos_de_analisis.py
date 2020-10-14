@@ -237,3 +237,6 @@ ver_reticulado_3d(ret_D,
 plt.title("FU caso D rediseñado: 1.4 D ")
 plt.savefig("Fu2.png")
 plt.show()
+
+desplazamiento = min(1.2*ret_D.u + 1.6*ret_L.u)
+print(f"El desplazamiento maximo es {desplazamiento} m")
